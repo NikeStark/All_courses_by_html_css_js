@@ -133,6 +133,129 @@ x++; // or x--
 console.log(x);
 
 
+/***************************
+* Coding Challenge 1
+*/
+
+/*
+var massJonh = 80; //kg
+var heightJonh = 1.78; //meters
+
+var massMark = 92;
+var heightMark = 1.86;
+
+var bmiJonh = massJonh / (heightJonh * heightJonh);
+var bmiMark = massMark / (heightMark * heightMark);
+console.log(bmiJonh, bmiMark);
+
+var bmiMarkHigher = heightMark > heightJonh;
+
+console.log('Is Mark\'s BMI higher than Jonh\'s' + ' - ' + bmiMarkHigher);
+*/
+
+/***************************
+* if / else statements
+*/
+
+/*
+var firstName = 'Jonh';
+var civilStatus = 'single';
+
+if(civilStatus === 'married'){
+	console.log(firstName + ' is married!');
+} else {
+	console.log(firstName + ' will hopefully marry soon :)')
+}
+
+
+var isMarried = true;
+
+if(isMarried){
+	console.log(firstName + ' is married!');
+} else {
+	console.log(firstName + ' will hopefully marry soon :)')
+}
+
+
+var massJonh = 80; //kg
+var heightJonh = 1.78; //meters
+
+var massMark = 92;
+var heightMark = 1.86;
+
+var bmiJonh = massJonh / (heightJonh * heightJonh);
+var bmiMark = massMark / (heightMark * heightMark);
+console.log(bmiJonh, bmiMark);
+
+var bmiMarkHigher = heightMark > heightJonh;
+
+if (heightMark > heightJonh){
+	console.log('Is Mark\'s BMI higher than Jonh\'s');
+} else{
+	 console.log('Is Mark\'s BMI smaller than Jonh\'s');
+}
+
+*/
+
+
+/***************************
+* boolean logic
+*/
+
+/*
+var firstName = 'Jonh';
+var age = 20;
+
+if (age < 13){
+	console.log(firstName + ' is a boy');
+} else if (age >= 13 && age < 20) { // Beetwen 13 and 20
+	console.log(firstName + ' is a teenager');
+} else if (age >= 20 && age < 30) {
+	console.log(firstName + ' young man');	  
+} else {
+	console.log(firstName + ' is a man');
+}
+
+*/
+
+/***************************
+* The ternary Operator and Switch Statements
+*/
+
+var firstName = 'Jonh';
+var age = 14;
+
+age >= 18 ? console.log(firstName + ' drinks a beer')
+: console.log(firstName + ' drinks a juice');
+
+var drink = age >=18 ? 'beer' : 'juice';
+console.log(drink);
+
+/* if (age >= 18) { // same altarnative like above
+	var drink = 'beer';
+} else {
+	var drink = 'juice';
+} */
+
+var job = 'driver';
+switch(job){
+	case 'teacher':
+		console.log(firstName + ' teaches kids how to code');
+		break;
+	case 'driver':
+		console.log(firstName + ' drives an uber and Lisbon');
+		break;
+	case 'designer':
+		console.log(firstName + ' beautiful websites');
+		break;
+	default:
+		console.log(firstName + ' does something else');
+}
+
+
+
+
+
 
 
 
