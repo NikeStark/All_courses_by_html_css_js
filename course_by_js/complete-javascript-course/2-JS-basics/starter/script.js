@@ -1,3 +1,4 @@
+
 /************************
 *Variables and data types
 */
@@ -251,6 +252,100 @@ switch(job){
 	default:
 		console.log(firstName + ' does something else');
 }
+
+
+/***************************
+* Coding Challenge 2
+*/
+
+var teamJonh;
+var teamMike;
+var teamMary;
+
+teamJonh = (89+120+103)/3;
+teamMike = (116+94+123)/3;
+teamMary = (97+134+105)/3;
+
+console.log(teamJonh, teamMike, teamMary);
+
+/*
+if(teamJonh>teamMike && teamJonh>teamMary){
+	console.log('Team Jonh\'s have highest average score');
+} else if(teamMike>teamJonh && teamMike>teamMary){
+	console.log('Team Mike\'s have highest average score');
+} else if(teamMary>teamJonh && teamMary>teamMike){
+	console.log('Team Mary\'s have highest average score');
+} else {
+	console.log('It\'s draw');
+}
+*/
+
+teamJonh>teamMike && teamJonh>teamMary ? 
+console.log('Team Jonh\'s have highest average score') : 
+teamMike>teamJonh && teamMike>teamMary ? 
+console.log('Team Mike\'s have highest average score') : 
+teamMary>teamJonh && teamMary>teamMike ? 
+console.log('Team Mary\'s have highest average score') :
+console.log('It\'s draw');
+
+
+/***************************
+* Functions
+*/
+
+function calculateAge(birthYear){
+	return 2018 - birthYear;
+}
+
+var ageJonh = calculateAge(1990);
+var ageMark = calculateAge(1988);
+var ageMarry = calculateAge(1993);
+console.log(ageJonh,ageMark,ageMarry);
+
+
+function calculateTillRetire(certainData){
+	return 65 - certainData;
+} 
+
+	var retireAliaksandr = calculateTillRetire(25);
+	var retireDmitrey = calculateTillRetire(47);
+
+	console.log('Aliaksandr will go to retire through '+retireAliaksandr+' years, ', 'Dmitrey will go to retire through '+retireDmitrey+' years');
+
+
+function yearsUntillRetirement(year, firstName) {
+	var age = calculateAge(year);
+	var retirement = 65 - age;
+	if(retirement > 0){
+		console.log(firstName + ' retires in '+
+		retirement + ' years.');
+	   } else {
+		console.log(firstName + ' is already retired');   
+	   }
+	
+}
+	yearsUntillRetirement(1990, ' Jonh');
+	yearsUntillRetirement(1988, ' Mark');
+	yearsUntillRetirement(1993, ' Marry');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
