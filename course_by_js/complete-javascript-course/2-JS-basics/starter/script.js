@@ -325,12 +325,36 @@ function yearsUntillRetirement(year, firstName) {
 	
 }
 	yearsUntillRetirement(1990, ' Jonh');
-	yearsUntillRetirement(1988, ' Mark');
-	yearsUntillRetirement(1993, ' Marry');
+	yearsUntillRetirement(1950, ' Mark');
+	yearsUntillRetirement(1980, ' Marry');
 
 
+/***************************
+* Function statements and expressions
+*/
 
+//Function declaration 
+//function whatDoYouDo(job, firstName){ }
 
+//Function expression
+
+var whatDoYouDo = function (job, firstName){
+	switch(job){
+		case 'teacher':
+			return firstName+' teaches kids how to code';
+		case 'driver':
+			return firstName+' drivers a cab in Lisbon';
+		case 'designer':
+			return firstName+' designs beautiful websites';
+		default:
+			return firstName+' does something else';
+	}
+}
+
+console.log (whatDoYouDo('driver', 'Mark'));
+console.log (whatDoYouDo('designer', 'Jonh'));
+console.log (whatDoYouDo('doctor', 'Sara'));
+console.log (whatDoYouDo('teacher', 'Marry'));
 
 
 
