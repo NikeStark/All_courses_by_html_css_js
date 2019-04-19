@@ -357,17 +357,105 @@ console.log (whatDoYouDo('doctor', 'Sara'));
 console.log (whatDoYouDo('teacher', 'Marry'));
 
 
+/***************************
+* Arrays
+*/
+
+// Initialize new data
+var names = ['Jonh','Mark','Jane'];
+var years = new Array(1969,1978,1977);
+
+console.log(names[2]);
+console.log(names.length);
+
+
+// Mutate array data
+names[1] = 'Wolter';
+names[names.length] = 'Stiv';
+console.log(names);
+
+
+//Different data types
+
+var jonh = ['Jonh','Smith',1993,'Teacher',false];
+
+jonh.push('blue'); //after add
+jonh.unshift('Mr.'); //before add
+console.log(jonh);
+
+jonh.pop(); //remove last
+jonh.pop();
+jonh.shift(); //remove first
+console.log(jonh);
+
+console.log(jonh.indexOf(56));
+
+var isDesigner = jonh.indexOf('Designer') === -1 ?
+	'Jonh is NOT a designer':'Jonh is a designer';
+console.log(isDesigner);
+
+
+/***************************
+* Coding Challenge 3
+*/
+
+function tipCalculator(bill){
+	var percantage;
+	if(bill<50){
+		percantage=.2;
+	} else if (bill>=50 && bill<200){
+		percantage=.15;
+	} else if (bill>200){
+		percantage=.1;
+	} 
+	return bill*percantage;
+}
+
+	bills = [124,48,268];
+	console.log(tipCalculator(bills[0]),
+			   	tipCalculator(bills[1]),
+			   	tipCalculator(bills[2]));
+	
+	console.log(bills[0]+tipCalculator(bills[0])+" , ",
+			   	bills[1]+tipCalculator(bills[1])+" , ",
+			   	bills[2]+tipCalculator(bills[2])+".");
+
+	bills[0]>bills[1] && bills[0]>bills[2] ?
+		console.log("The biggest tip was in the first restaurant") :
+	bills[1]>bills[0] && bills[1]>bills[2] ?
+		console.log("The biggest tip was in the second restaurant") :
+	bills[2]>bills[0] && bills[2]>bills[1] ?
+		console.log("The biggest tip was in the third restaurant"):
+		console.log("Nowhere");
+
+	
 
 
 
+// less 50$ = 20%
+// 50$ - 200$ = 15%	
+// more 200$ = 10%
+
+var browser = prompt("Enter your browser: ", "");
+if (browser === "IE") {
+alert( 'О, да у вас IE!' );
+} else if (browser === "Chrome"||browser === "Opera"||browser === "Firefox"||browser === "Safari") {
+alert( 'Да, и эти браузеры мы поддерживаем' );
+} else {
+alert( 'Мы надеемся, что и в вашем браузере все ок!' );
+	   } 
+			 
+
+	var password = prompt("Please, enter you password:");
+	if(password==="131093"){
+	alert("You entered your password right!");
+} else{
+	alert("Try to enter your paswword again");
+	setTimeout(password,1000);
+}
 
 
-
-
-
-
-
-
+	
 
 
 
