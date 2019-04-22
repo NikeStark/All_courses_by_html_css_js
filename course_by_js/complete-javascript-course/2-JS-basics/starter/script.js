@@ -449,24 +449,112 @@ alert( 'Мы надеемся, что и в вашем браузере все �
 	var password = prompt("Please, enter you password:");
 	if(password==="131093"){
 	alert("You entered your password right!");
-} else{
-	alert("Try to enter your paswword again");
-	setTimeout(password,1000);
-}
+} else if (password != "131093"){
+	prompt("Try to enter your paswword again");
+} else if(password==="131093"){
+	alert("You entered your password right!");
+} 
+		
+		
+/***************************
+* Objects and properties
+*/
 
+
+//Object literal
+var jonh = {
+	firstName: 'Jonh',
+	lastName: 'Smith',
+	birthYear: 1993,
+	family: ['Jane','Mark','Bob','Emily'],
+	job: 'driver',
+	isMarried: false
+};
+
+console.log(jonh.family);
+console.log(jonh['lastName']);
+
+var x = 'birthYear';
+console.log(jonh[x]);
+
+jonh.job = 'designer';
+jonh['isMarried'] = true;
+
+console.log(jonh);
+
+//new Object syntax
+
+var jane = new Object();
+jane.firstName = 'Jane';
+jane['lastName']='Smith';
+jane.birthYear = 1995;
+jane.job = 'Chef';
+jane.family = ['Robbert','Sam','Waller'];
+
+console.log(jane);
+
+/***************************
+* Objects and methods
+*/
+
+var jonh = {
+	firstName: 'Jonh',
+	lastName: 'Smith',
+	birthYear: 1993,
+	family: ['Jane','Mark','Bob','Emily'],
+	job: 'driver',
+	isMarried: false,
+	calcAge: function(){
+		return 2018 - this.birthYear;
+	}
+};
+	console.log(jonh.calcAge(1990));
+	
+	var Mark = new Object();
+	Mark.firstName = 'Mark';
+	Mark.lastName = 'Smith';
+	Mark.birthYear = 1993;
+	Mark.calcAge = function(birthYear){
+		return 2018 - birthYear;
+	};
+	Mark.calcAge = function(){
+		this.age = 2018 - this.birthYear;
+	};
+	
+	Mark.calcAge();
+	console.log(Mark);
+	console.log(Mark.calcAge(2000));
+
+
+/***************************
+* Coding Challenge 4
+*/ 
+
+var Jonh = {
+	fullName: 'Jonh',
+	massJonh: 94,
+	heightJonh: 1.88,
+	calcBmiJonh: function(){
+		return this.massJonh / (this.heightJonh*this.heightJonh);
+	}
+};
+	
+var Mark = new Object();
+	Mark.fullName = 'Mark';
+	Mark.massMark = 92;
+	Mark.heightMark = 1.86;
+	Mark.calcBmiMark = function(){
+		return this.massMark / (this.heightMark*this.heightMark);
+	}
+	
+		console.log('bmiJonh = ' + Jonh.calcBmiJonh()+' ; '+
+				'bmiMark = '+Mark.calcBmiMark());
+	
+	var highBMI = Jonh.calcBmiJonh() > Mark.calcBmiMark();
 
 	
+	console.log('Is Mark\'s BMI higher than Jonh\'s' + ' - ' + highBMI);
 
 
-
-
-
-
-
-
-
-
-
-
-
+ 
 
