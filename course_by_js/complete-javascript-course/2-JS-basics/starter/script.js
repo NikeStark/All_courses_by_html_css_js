@@ -530,30 +530,84 @@ var jonh = {
 * Coding Challenge 4
 */ 
 
-var Jonh = {
-	fullName: 'Jonh',
-	massJonh: 94,
-	heightJonh: 1.88,
+var jonh = {
+	fullName: 'Jonh Smith',
+	massJonh: 80,
+	heightJonh: 1.92,
 	calcBmiJonh: function(){
-		return this.massJonh / (this.heightJonh*this.heightJonh);
-	}
+	return this.massJonh / (this.heightJonh*this.heightJonh);
+}
 };
-	
-var Mark = new Object();
-	Mark.fullName = 'Mark';
-	Mark.massMark = 92;
-	Mark.heightMark = 1.86;
-	Mark.calcBmiMark = function(){
+
+
+var mark = new Object();
+	mark.fullName = 'Mark Smith';
+	mark.massMark = 85;
+	mark.heightMark = 1.90;
+	mark.calcBmiMark = function(){
 		return this.massMark / (this.heightMark*this.heightMark);
 	}
 	
-		console.log('bmiJonh = ' + Jonh.calcBmiJonh()+' ; '+
-				'bmiMark = '+Mark.calcBmiMark());
+console.log('bmiMark\'s = '+mark.calcBmiMark()+' ; '+'bmiJonh\'s = '+jonh.calcBmiJonh());
 	
-	var highBMI = Jonh.calcBmiJonh() > Mark.calcBmiMark();
+	var highestBMI = mark.calcBmiMark()>jonh.calcBmiJonh();
+	console.log('The highest BMI Mark\'s = '+highestBMI);
+	
+	if(mark.calcBmiMark()>jonh.calcBmiJonh()){
+		console.log('BMI Mark\'s more than BMI Jonh\'s');
+	}  else if(mark.calcBmiMark() < jonh.calcBmiJonh()){
+		console.log('BMI Mark\'s less than BMI Jonh\'s');
+	} else {
+		console.log('BMI have the same BMI');
+	}
+		
+/***************************
+* Loops and Iterations
+*/
 
-	
-	console.log('Is Mark\'s BMI higher than Jonh\'s' + ' - ' + highBMI);
+//for loop
+
+for(var i = 1;i<=20;i+=2){
+	console.log(i);
+}
+
+// i = 0, 0 < 10 true, log i to console, i++
+// i = 1, 1 < 10 true, log i to console, i++
+// ......
+// i = 10, 10 < 10 false, exit the loop!
+
+var jonh = ['Jonh','Smith',1993,'Teacher',false];
+for(var i = 0;i<jonh.length;i++){
+	console.log(jonh[i]);
+}
+
+// while loop
+
+var i = 0;
+while(i < jonh.length){
+	console.log(jonh[i]);
+	i++;
+}
+
+// continue and break statements
+
+var jonh = ['Jonh','Smith',1993,'Teacher',false];
+for(var i = 0;i<jonh.length;i++){
+	if(typeof jonh[i] !== 'string')continue;
+	console.log(jonh[i]);
+}
+
+var jonh = ['Jonh','Smith',1993,'Teacher',false];
+for(var i = 0;i<jonh.length;i++){
+	if(typeof jonh[i] !== 'string') break;
+	console.log(jonh[i]);
+}
+
+
+
+
+
+
 
 
  
