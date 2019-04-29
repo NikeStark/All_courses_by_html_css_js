@@ -603,12 +603,79 @@ for(var i = 0;i<jonh.length;i++){
 	console.log(jonh[i]);
 }
 
+// massive work on the contrary into another side in this case
+var jonh = ['Jonh','Smith',1993,'Teacher',false,'blue'];
+for(var i = jonh.length -1;i>=0;i--){
+	if(typeof jonh[i] !== 'string') continue;
+	console.log(jonh[i]);
+}
+
+ for(var i = jonh.length;i>=0;i--){
+	 console.log(jonh[i]);
+ }
+
+/***************************
+* Coding Challenge 5
+*/
 
 
+var jonh = {
+	fullName: 'Jonh Smith',
+	bills: [124,48,268,180,42],
+	tips:[],
+	finalValues:[],
+	calcTips:function(){
+		for(var i = 0;i<this.bills.length;i++){
+			
+	// Determine percentage based on tipping rules
+			var percantage;
+			var bill = this.bills[i];
+	
+	if(bill<50){
+		percantage=.2;
+	} else if (bill>=50 && bill<200){
+		percantage=.15;
+	} else if (bill>200){
+		percantage=.1;
+	} 
+			
+	// Add results to the corresponing arrays
+	this.tips[i] = bill*percantage;
+	this.finalValues[i] = bill + bill * percantage;
+		}
+	}
+};
+	jonh.calcTips();
+	console.log(jonh.tips);
 
+/*
+function tipCalculator(bill){
+	var percantage;
+	if(bill<50){
+		percantage=.2;
+	} else if (bill>=50 && bill<200){
+		percantage=.15;
+	} else if (bill>200){
+		percantage=.1;
+	} 
+	return bill*percantage;
+}
 
+	bills = [124,48,268];
+	console.log(tipCalculator(bills[0]),
+			   	tipCalculator(bills[1]),
+			   	tipCalculator(bills[2]));
+	
+	console.log(bills[0]+tipCalculator(bills[0])+" , ",
+			   	bills[1]+tipCalculator(bills[1])+" , ",
+			   	bills[2]+tipCalculator(bills[2])+".");
 
-
-
- 
+	bills[0]>bills[1] && bills[0]>bills[2] ?
+		console.log("The biggest tip was in the first restaurant") :
+	bills[1]>bills[0] && bills[1]>bills[2] ?
+		console.log("The biggest tip was in the second restaurant") :
+	bills[2]>bills[0] && bills[2]>bills[1] ?
+		console.log("The biggest tip was in the third restaurant"):
+		console.log("Nowhere");
+*/
 
