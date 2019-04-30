@@ -618,64 +618,93 @@ for(var i = jonh.length -1;i>=0;i--){
 * Coding Challenge 5
 */
 
-
 var jonh = {
 	fullName: 'Jonh Smith',
-	bills: [124,48,268,180,42],
-	tips:[],
-	finalValues:[],
-	calcTips:function(){
-		for(var i = 0;i<this.bills.length;i++){
+	tips: [126,48,230,180,42],
+	finalValues: [],
+	tip:[],
+	calcTips: function(){
+		for(var i = 0;i<this.tips.length;i++){
 			
-	// Determine percentage based on tipping rules
-			var percantage;
-			var bill = this.bills[i];
-	
-	if(bill<50){
-		percantage=.2;
-	} else if (bill>=50 && bill<200){
-		percantage=.15;
-	} else if (bill>200){
-		percantage=.1;
-	} 
+			var percentage;
+			var shortTip = this.tips[i];
 			
-	// Add results to the corresponing arrays
-	this.tips[i] = bill*percantage;
-	this.finalValues[i] = bill + bill * percantage;
+			if(shortTip<50){
+				percentage = .2;
+			} else if(shortTip>50 && shortTip<200){
+				percentage = .15;
+			} else {
+				percentage = .10;
+			}
+			
+			this.tip[i] = shortTip*percentage;
+			this.finalValues[i] = shortTip + shortTip*percentage;
 		}
 	}
-};
-	jonh.calcTips();
-	console.log(jonh.tips);
+};			
 
-/*
-function tipCalculator(bill){
-	var percantage;
-	if(bill<50){
-		percantage=.2;
-	} else if (bill>=50 && bill<200){
-		percantage=.15;
-	} else if (bill>200){
-		percantage=.1;
-	} 
-	return bill*percantage;
+
+var mark = new Object();
+mark.fullName ='Mark Smith';
+mark.tips = [77,375,110,45];
+mark.finalValues = [];
+mark.tip = [];
+mark.calcTips = function(){
+	for (var i = 0;i<this.tips.length;i++){
+		
+		var percentage;
+		var shortTip = this.tips[i];
+		
+		if (shortTip<100){
+			percentage = .2;
+		} else if (shortTip >=100 && shortTip <= 300){
+			percentage = .1;
+		} else {
+			percentage = .25;
+		}
+			
+		this.tip[i] = shortTip * percentage;
+		this.finalValues[i] = shortTip + shortTip * percentage;
+	}
+};
+		
+		jonh.calcTips();
+		mark.calcTips();
+		console.log(jonh.tip,mark.tip);
+
+
+var calcAverage = function average(tips){
+	
+	
+	
+	for(var i = 0;0<jonh.tip;i++){
+		
+	}
 }
 
-	bills = [124,48,268];
-	console.log(tipCalculator(bills[0]),
-			   	tipCalculator(bills[1]),
-			   	tipCalculator(bills[2]));
-	
-	console.log(bills[0]+tipCalculator(bills[0])+" , ",
-			   	bills[1]+tipCalculator(bills[1])+" , ",
-			   	bills[2]+tipCalculator(bills[2])+".");
 
-	bills[0]>bills[1] && bills[0]>bills[2] ?
-		console.log("The biggest tip was in the first restaurant") :
-	bills[1]>bills[0] && bills[1]>bills[2] ?
-		console.log("The biggest tip was in the second restaurant") :
-	bills[2]>bills[0] && bills[2]>bills[1] ?
-		console.log("The biggest tip was in the third restaurant"):
-		console.log("Nowhere");
-*/
+
+function yearsUntillRetirement(year, firstName) {
+	var age = calculateAge(year);
+	var retirement = 65 - age;
+	if(retirement > 0){
+		console.log(firstName + ' retires in '+
+		retirement + ' years.');
+	   } else {
+		console.log(firstName + ' is already retired');   
+	   }
+	
+}
+	yearsUntillRetirement(1990, ' Jonh');
+	yearsUntillRetirement(1950, ' Mark');
+	yearsUntillRetirement(1980, ' Marry');
+
+
+
+
+
+
+
+
+
 
