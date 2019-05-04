@@ -620,91 +620,146 @@ for(var i = jonh.length -1;i>=0;i--){
 
 var jonh = {
 	fullName: 'Jonh Smith',
-	tips: [126,48,230,180,42],
-	finalValues: [],
-	tip:[],
+	bills: [126,48,230,180,42],
+	bill:[],
+	finalValues:[],
 	calcTips: function(){
-		for(var i = 0;i<this.tips.length;i++){
+		for(var i = 0;i<this.bills.length;i++){
 			
 			var percentage;
-			var shortTip = this.tips[i];
+			var tips = this.bills[i];
 			
-			if(shortTip<50){
+		
+			if(tips<50){
 				percentage = .2;
-			} else if(shortTip>50 && shortTip<200){
+			} else if (tips>=50 && tips<=200){
 				percentage = .15;
 			} else {
 				percentage = .10;
 			}
 			
-			this.tip[i] = shortTip*percentage;
-			this.finalValues[i] = shortTip + shortTip*percentage;
+			this.bill[i]=tips*percentage;
+			this.finalValues[i]=tips+tips*percentage;
+			
 		}
 	}
-};			
+};
+	jonh.calcTips(); 
+	console.log(jonh.bill,jonh.finalValues);
 
-
-var mark = new Object();
-mark.fullName ='Mark Smith';
-mark.tips = [77,375,110,45];
+var mark = new Object ();
+mark.fullName = 'Mark Jonson';
+mark.bills = [77,375,110,45];
+mark.bill = [];
 mark.finalValues = [];
-mark.tip = [];
 mark.calcTips = function(){
-	for (var i = 0;i<this.tips.length;i++){
+	for(var i = 0;i<this.bills.length;i++){
 		
 		var percentage;
-		var shortTip = this.tips[i];
-		
-		if (shortTip<100){
+		var tips = this.bills[i];
+		if(tips<100){
 			percentage = .2;
-		} else if (shortTip >=100 && shortTip <= 300){
+		} else if (tips >= 100 && tips <= 300) {
 			percentage = .1;
 		} else {
 			percentage = .25;
 		}
-			
-		this.tip[i] = shortTip * percentage;
-		this.finalValues[i] = shortTip + shortTip * percentage;
+		
+		this.bill[i] = tips * percentage;
+		this.finalValues[i] = tips + tips * percentage;
 	}
 };
-		
-		jonh.calcTips();
 		mark.calcTips();
-		console.log(jonh.tip,mark.tip);
+		console.log(mark.bill,mark.finalValues);
 
 
-var calcAverage = function average(tips){
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var arr = jonh.finalValues;
+function arraySumJonh(array,average){
+var sum_jonh = 0;
+for(var i = 0; i < array.length; i++){
+    sum_jonh += array[i]/average;
+    }
+console.log('Last tips Jonh\'s = '+sum_jonh);
+}
+console.log(arraySumJonh(arr,5));
+
+
+
+var arr = mark.finalValues;
+function arraySumMark(array,average){
+var sum_mark = 0;
+for(var i = 0; i < array.length; i++){
+    sum_mark += array[i]/average;
+    }
+console.log('Last tips Mark\'s = '+sum_mark);
+}
+console.log(arraySumMark(arr,4));
+
+
+var biggerTips = arraySumMark > arraySumJonh;
 	
-	
-	
-	for(var i = 0;0<jonh.tip;i++){
-		
+
+console.log(biggerTips);
+
+
+
+
+
+
+
+	var func = function calcAv (average){
+		switch(average){
+			case average<100:
+				percentage = .2;
+				console.log (average * percentage);
+				break;
+				
+			case average >= 100 && average <= 300:
+				percentage = .1;
+				console.log (average * percentage);
+				break;
+				
+			case average > 300:
+				percentage = .25;
+				console.log (average * percentage);
+				break;
+		}	
+	};
+		console.log(func(126));
+
+
+	function calcUnits (average){
+			return average / 5;
 	}
-}
+		 
+	console.log(calcUnits(100));
 
 
+var mas = [1,2,3,4,5,6,7,8,9];
+var kas = [1,2,3,4,5,6,7,8,9];
 
-function yearsUntillRetirement(year, firstName) {
-	var age = calculateAge(year);
-	var retirement = 65 - age;
-	if(retirement > 0){
-		console.log(firstName + ' retires in '+
-		retirement + ' years.');
-	   } else {
-		console.log(firstName + ' is already retired');   
-	   }
-	
-}
-	yearsUntillRetirement(1990, ' Jonh');
-	yearsUntillRetirement(1950, ' Mark');
-	yearsUntillRetirement(1980, ' Marry');
-
-
-
-
-
-
-
-
-
+	for(var i = mas.length;i >= 0;i--){
+			for(var k = kas.length;k >= 0;k--){
+				
+				console.log(mas[i],kas[k]);
+			}
+			
+	}
 
