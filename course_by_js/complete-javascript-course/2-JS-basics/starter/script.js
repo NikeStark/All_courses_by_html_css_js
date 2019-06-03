@@ -578,7 +578,7 @@ for(var i = 1;i<=20;i+=2){
 
 var jonh = ['Jonh','Smith',1993,'Teacher',false];
 for(var i = 0;i<jonh.length;i++){
-	console.log(jonh[i]);
+	console.log(jonh[i]);  
 }
 
 // while loop
@@ -674,6 +674,23 @@ mark.calcTips = function(){
 
 
 
+function calcAverage(bill) {
+	var sum = 0;
+	for (var i = 0;i < bill.length;i++){
+		sum = sum + bill[i];
+	}
+	 return sum / bill.length;
+}
+
+jonh.average = calcAverage(jonh.bill);
+mark.average = calcAverage(mark.bill);
+console.log(jonh,mark);
+
+jonh.average > mark.average ?
+	console.log(jonh.fullName + '\'s family pays higher tips, with an average of $' + jonh.average):
+mark.average > jonh.average ?
+	console.log(mark.fullName + '\'s family pays higher tips, with an average of $' + mark.average):
+	console.log('The both meanings equal each other');
 
 
 
@@ -686,11 +703,7 @@ mark.calcTips = function(){
 
 
 
-
-
-
-
-var arr = jonh.finalValues;
+/*var arr = jonh.finalValues;
 function arraySumJonh(array,average){
 var sum_jonh = 0;
 for(var i = 0; i < array.length; i++){
@@ -716,7 +729,7 @@ console.log(arraySumMark(arr,4));
 var biggerTips = arraySumMark > arraySumJonh;
 	
 
-console.log(biggerTips);
+console.log(biggerTips);*/
 
 
 
