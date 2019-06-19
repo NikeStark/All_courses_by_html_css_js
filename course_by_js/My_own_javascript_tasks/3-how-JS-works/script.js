@@ -3,6 +3,19 @@
 /////////////////////////////////////////
 //Lecture hoisting
 
+var x = 1; // Инициализируем x
+console.log(x + " " + y);  // '1 undefined'
+var y = 2;
+//код выше и код ниже одинаковые
+
+var x = 1; // Инициализируем x
+var y; // Объявляем y
+console.log(x + " " + y);  // '1 undefined'
+y = 2; // Инициализируем y
+
+
+
+
 function calculateAge(year){
 	console.log(2016 - year);
 }
@@ -110,6 +123,42 @@ function third(){
 }
 
 
+///////////////////////////
+//The this keyword
+
+calculateAge(1999);
+
+function calculateAge(year){
+	console.log(2016 - year);
+	console.log(this);
+	
+}
+
+var jonh = {
+	name: 'Jonh',
+	yearOfBirth: 1990,
+	calculateAge: function (){
+		console.log(2019 - this.yearOfBirth);
+		console.log(this); //function inside of method into object
+		
+		//it's still a regular function and is not method
+		/*function innerFunction(){
+			console.log(this);
+		}
+		
+		innerFunction();*/
+	}
+}
+
+jonh.calculateAge();
+
+
+var mike = {
+	name:'Mike',
+	yearOfBirth: 1995
+}
+	mike.calculateAge = jonh.calculateAge;
+	mike.calculateAge();
 
 
 
